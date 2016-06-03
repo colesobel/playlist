@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    font-family: Optima, sans-serif;
+}
+
+header {
+    background-color: #686859;
+    height: 5vh;
+    width: 100vw;
+}
+
+.right {
+    position: relative;
+    float: right;
+    height: 95vh;
+    width: 50vw;
+}
+
+.background-image {
+    position: absolute;
+    background-image: url('resources/track.jpg');
+    background-size: cover;
+    opacity: 0.19;
+    height: 100%;
+    width: 100%;
+}
+
+
+.left {
+    position: relative;
+    float: left;
+    height: 95vh;
+    width: 50vw;
+    color: #4C0066;
+    font-size: 3.6em;
+}
+
+.left .track-bin {
+    position: relative;
+    top: 27%;
+    text-align: center;
+}
+
+button {
+    background-color: #353526;
+    position: absolute;
+    left: 35%;
+    top: 45%;
+    width: 30%;
+    height: 7%;
+    color: white;
+    font-size: .4em;
+    border-radius: 6%;
+}
+
+
+footer {
+    background-color: #686859;
+    height: 5vh;
+    width: 100vw;
+    font-size: 1.5em;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+}
+
+
+small {
+    margin-left: 5%;
+}
+
+img {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+
+}
+
+#img0 {
+    top: 3%;
+    left: 50%;
+    margin-left: -100px;
+}
+
+
+#img1 {
+    top: 33%;
+    left: 50%;
+    margin-left: -100px;
+}
+
+#img2 {
+    top: 63%;
+    left: 50%;
+    margin-left: -100px;
+}

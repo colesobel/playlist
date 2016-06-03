@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    font-family: Optima, sans-serif;
+}
+
+header {
+    background-color: #9B9B8C;
+    height: 15vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+header p {
+    color: white;
+    font-size: 1.3em;
+    position: absolute;
+    bottom: 5%;
+}
+
+.image-holder {
+    background-color: red;
+    height: 15vh;
+    width: 100vw;
+}
+
+.bin {
+    background-color: #EEEEEE;
+    width: 80vw;
+    height: 30vh;
+    border: 3px solid #010101;
+}
+
+.clear, .submit{
+    background-color: #353526;
+    height: 6vh;
+    width: 15vw;
+    float: left;
+    margin: 15px;
+    border-radius: 6%;
+    color: white;
+    font-size: 1.3em;
+    text-align: center;
+    padding: 5px;
+}
+
+
+footer {
+    position: absolute;
+    bottom: 0;
+    background-color: #686859;
+    width: 100vw;
+    height: 5vh;
+    margin: 0;
+}
+
+
+small {
+    margin-left: 5%;
+    font-size: 1.3em;
+}

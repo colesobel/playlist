@@ -2,16 +2,16 @@ $(document).ready(function() {
 
     $.ajax({
         type: 'GET',
-        url: 'https://lit-fortress-6467.herokuapp.com/object',
+        url: 'https://api.spotify.com/v1/search?q=michael%20jackson&type=album&market=US',
         success: function(data) {
-            data.results.forEach(function(album, i) {
-                $('.image-holder').append(`<img id="img${i}" src="./images/${album.cover_art}"/>`)
-                $(`#img${i}`).attr('data-artist', album.artist)
-                $(`#img${i}`).attr('data-title', album.title)
+            data.albums.items.forEach(function(elem, i) {
+                $('.image-holder').append(`<img id="img${i}" src="${elem.images[0].url}"/>`)
+                $(`#img${i}`).attr('data-title', elem.name)
+
             })
 
             $('img').click(function() {
-                $('#bin').append(`<p>${$(this).attr("data-artist")}: ${$(this).attr("data-title")}</p>`)
+                $('#bin').append(`<p>${$(this).attr("data-title")}</p>`)
             })
 
             $('.clear').click(function() {
@@ -20,12 +20,13 @@ $(document).ready(function() {
 
             $('.submit').click(function() {
                 var playlistObj = {}
+                var counter = 0
                 $('#bin').children().each(function() {
-                    playlistObj[$(this).text().split(':')[0]] = $(this).text().split(':')[1];
-
+                    playlistObj[counter] = $(this).text();
+                    counter += 1
                 });
 
-                // console.log(playlistObj);
+                console.log(playlistObj);
                 $.ajax({
                     type: 'POST',
                     url: 'https://lit-fortress-6467.herokuapp.com/post',
@@ -39,8 +40,5 @@ $(document).ready(function() {
 
         }
     })
-
-
-
 
 })

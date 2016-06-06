@@ -28,7 +28,13 @@ header p {
 .image-holder {
     height: 15vh;
     width: 100vw;
-    display: flex;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+.image-holder img {
+    height: 100px;
+    width: 100px;
 }
 
 #bin {
@@ -39,6 +45,7 @@ header p {
     position: absolute;
     left: 10%;
     top: 38%;
+    overflow: scroll;
 }
 
 .clear, .submit{

@@ -1,31 +1,26 @@
 $(document).ready(function() {
 
-    var usedAlbums = []
-    function random(arr) {
-        var album = arr[Math.floor(Math.random() * arr.length)]
-
-        if (usedAlbums.includes(album.cover_art)) {
-            return random(arr)
-        } else {
-            usedAlbums.push(album.cover_art)
-        }
-    }
+    // var usedAlbums = []
+    // function random(arr) {
+    //     var album = arr[Math.floor(Math.random() * arr.length)]
+    //
+    //     if (usedAlbums.includes(arr.images[0].url)) {
+    //         return random(arr)
+    //     } else {
+    //         usedAlbums.push(arr.images[0].url)
+    //     }
+    // }
 
 
 
     $.ajax({
         type: 'get',
-        url: 'https://lit-fortress-6467.herokuapp.com/object',
+        url: 'https://api.spotify.com/v1/search?q=michael%20jackson&type=album&market=US',
         success: function(data) {
-            
+
             for (var i = 0; i < 3; i++) {
-                random(data.results)
+                $('.right').append(`<img id="img${i}" src="${data.albums.items[Math.floor(Math.random() * data.albums.items.length)].images[0].url}">`)
             }
-
-            usedAlbums.forEach(function(elem, i) {
-                $('.right').append(`<img id="img${i}" src="./images/${elem}">`)
-
-            })
 
 
         }
